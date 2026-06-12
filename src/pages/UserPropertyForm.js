@@ -42,7 +42,6 @@ const UserPropertyForm = () => {
     longitude: "",
     listingType: "sale",
     status: "available",
-    serviceChoice: "",
     amenities: [],
     images: [],
   })
@@ -103,7 +102,6 @@ const UserPropertyForm = () => {
         longitude: property.longitude ?? "",
         listingType: property.listing_type || "sale",
         status: property.status || "available",
-        serviceChoice: property.service_choice || "",
         amenities: property.amenities?.map((a) => a.id) || [],
         images: property.images?.map((i) => i.image_url) || [],
       })
@@ -292,23 +290,6 @@ const UserPropertyForm = () => {
                 >
                   <option value="sale">For Sale</option>
                   <option value="rent">For Rent</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Service Choice (Owner Benefits)
-                </label>
-                <select
-                  name="serviceChoice"
-                  value={formData.serviceChoice}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="">Select Service</option>
-                  <option value="Gas Stove">Gas Stove</option>
-                  <option value="Painting">Painting</option>
-                  <option value="Cleaning">Cleaning</option>
                 </select>
               </div>
 
